@@ -1,15 +1,15 @@
-
 pipeline {
     agent any
 
     tools {
-        maven 'Maven3'   // Name must match Maven configured in Jenkins Global Tool Configuration
+        maven 'Maven3'
+        jdk 'JDK25'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git 'https://github.com/Janhavi3045/maven.git'
             }
         }
 
